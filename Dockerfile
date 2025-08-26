@@ -8,7 +8,8 @@ RUN npm install
 
 COPY . .
 
-RUN npx prisma db push && npm run build
+RUN npx prisma db push 
+RUN npm run build
 
 EXPOSE 3123
 
