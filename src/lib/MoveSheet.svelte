@@ -7,11 +7,17 @@
 		<div class="move_pair">
 			<span class="move_number">{pair_ix+1}.</span>
 			<span class="move">{pair[0].moveSan}</span>
+                        {#if pair[0].comment}
+			        <p class="move-comment">{pair[0].comment}</p>
+			{/if}
 			<span class="move">
 			{#if pair.length == 2 && ! ( pair_ix == move_pairs.length - 1 && pair[1].ownMove ) }
 				{pair[1].moveSan}
 			{/if}
 			</span>
+                        {#if pair.length == 2 && pair[1].comment}
+				<p class="move-comment">{pair[1].comment}</p>
+			{/if}
 		</div>
 	{/each}
 </div>
@@ -46,5 +52,12 @@
 		border-style:solid;
 		border-width:0 0 1px 0;
 		margin:0 8px 2px 8px;
+	}
+	.move-comment {
+		margin:0;
+		padding:0 0 0 4px;
+		font-size:0.8em;
+		font-style:italic;
+		color:gray;
 	}
 </style>
