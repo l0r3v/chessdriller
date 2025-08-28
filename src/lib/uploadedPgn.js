@@ -5,7 +5,7 @@ export async function importPgn( pgn_content, pgn_filename, prisma, user_id, rep
 
 	// parse (multi-game) PGN into moves-list
 	const moves = pgndbToMoves( pgn_content, repForWhite );
-        console.log("DEBUG: moves parsed with comments:", moves);
+        console.log("DEBUG move parsed:", move.moveSan, "comment:", move.commentAfter || move.commentBefore);
 	const num_chapters_parsed = pgndbNumChapters( pgn_content );
 
 	// create pgn

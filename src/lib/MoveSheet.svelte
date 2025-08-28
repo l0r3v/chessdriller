@@ -1,5 +1,6 @@
 <script>
 	export let move_pairs;
+          console.log("Moves with comments:", move_pairs);
 </script>
 
 <div class="sheet">
