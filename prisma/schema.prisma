@@ -85,6 +85,7 @@ model Move {
 	reviewEase      Float?
 	deleted         Boolean @default(false)
 	history         StudyHistory[]
+        comment         String?
 
 	@@unique([ userId, repForWhite, fromFen, toFen ])
 }
